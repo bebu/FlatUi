@@ -5,3 +5,9 @@ or QQuickStyle. Not all components themed yet, just the ones i use. Feel free to
 
 Thanks to FlatUi for the great design.
 
+
+qputenv("QT_QUICK_CONTROLS_STYLE", "Material") 
+![Material](Material.png?raw=true "Title")
+
+qputenv("QT_QUICK_CONTROLS_STYLE", "FlatUi") 
+![Material](FlatUi.png?raw=true "Title")
