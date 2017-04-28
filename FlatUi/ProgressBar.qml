@@ -19,7 +19,7 @@ T.ProgressBar {
             width: parent.width * control.position
             height: parent.height 
             radius: 6
-            color: FlatUi.color(FlatUi.Primary)
+            color: FlatUi.color(control.FlatUi.colorClass)
             scale: control.mirrored ? -1 : 1
         }
     }

@@ -23,14 +23,14 @@ T.Slider {
         height: size
         color: control.enabled ? (
                 control.pressed ? 
-                    FlatUi.darkerColor(FlatUi.Primary) : FlatUi.color(FlatUi.Primary) 
+                    FlatUi.darkerColor(control.FlatUi.colorClass) : FlatUi.color(control.FlatUi.colorClass) 
                 ) : FlatUi.color(FlatUi.Default);
-        border.color: FlatUi.darkerColor(control.enabled ? FlatUi.Primary : FlatUi.Default)
+        border.color: FlatUi.darkerColor(control.enabled ? control.FlatUi.colorClass : FlatUi.Default)
         border.width: 1
         Behavior on width { NumberAnimation {} }
         Behavior on height { NumberAnimation {} }
         Behavior on color { ColorAnimation {} }
-        readonly property bool horizontal: control.orientation === Qt.Horizontal
+        readonly property bool horizontal: control.orientation === Qt.Horizontal        
     }
 
     background: Rectangle {
@@ -52,7 +52,7 @@ T.Slider {
             width: parent.width * (parent.horizontal ? control.position :  1)
             height: parent.height * (parent.horizontal ? 1 : control.position )
             radius: 3
-            color: FlatUi.color(FlatUi.Primary)
+            color: FlatUi.color(control.enabled ? control.FlatUi.colorClass : FlatUi.Default)
         }
         
     }
