@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>FlatUi/Button.qml</file>
+        <file>FlatUi/TextField.qml</file>
+        <file>FlatUi/qmldir</file>
+        <file>FlatUi/ToolBar.qml</file>
+        <file>FlatUi/ToolButton.qml</file>
+        <file>FlatUi/ToolSeparator.qml</file>
+        <file>FlatUi/Slider.qml</file>
+        <file>FlatUi/ProgressBar.qml</file>
+        <file>FlatUi/lato-regular.ttf</file>
+        <file>FlatUi/TabBar.qml</file>
+        <file>FlatUi/TabButton.qml</file>
+        <file>FlatUi/flat-ui-icons-regular.ttf</file>
+        <file>FlatUi/Fonts.qml</file>
+    </qresource>
+</RCC>
