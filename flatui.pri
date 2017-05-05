@@ -3,8 +3,7 @@
 QML_IMPORT_PATH += $$PWD
 QML_DESIGNER_IMPORT_PATH += $$PWD
 
-RESOURCES += \
-    $$PWD/flatui.qrc
+RESOURCES += $$PWD/flatui.qrc
 
 
 HEADERS += \

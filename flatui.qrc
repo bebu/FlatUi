@@ -13,5 +13,7 @@
         <file>FlatUi/TabButton.qml</file>
         <file>FlatUi/flat-ui-icons-regular.ttf</file>
         <file>FlatUi/Fonts.qml</file>
+        <file>FlatUi/Switch.qml</file>
+        <file>FlatUi/SwitchIndicator.qml</file>
     </qresource>
 </RCC>
