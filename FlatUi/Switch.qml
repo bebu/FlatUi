@@ -5,6 +5,7 @@ import FlatUi 1.0
 T.Switch {
     id: control
 
+    FlatUi.colorClass: FlatUi.Primary
     implicitWidth: Math.max(background ? background.implicitWidth : 0,
                             contentItem.implicitWidth + leftPadding + rightPadding)
     implicitHeight: Math.max(background ? background.implicitHeight : 0,
@@ -20,12 +21,12 @@ T.Switch {
         y: control.topPadding + (control.availableHeight - height) / 2
         control: control
     }
-
+    
     contentItem: Text {
         leftPadding: control.indicator && !control.mirrored ? control.indicator.width + control.spacing : 0
         rightPadding: control.indicator && control.mirrored ? control.indicator.width + control.spacing : 0
 
-        text: control.text
+        text: control.checked ? "ON" : "OFF"
         font: control.font
         color: control.enabled ? FlatUi.textColor : FlatUi.color(FlatUi.Default)
         elide: Text.ElideRight
