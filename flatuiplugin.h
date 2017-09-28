@@ -3,7 +3,7 @@
 
 #include <QObject>
 
-#ifndef FLATUI_BUILD_PLUGIN
+#ifdef FLATUI_BUILD_NO_PLUGIN
 
 class FlatUiPlugin : public QObject
 {
