@@ -5,7 +5,17 @@
 #include <QtQml>
 #include <QColor>
 
-class FlatUi : public QObject
+#ifndef QT_STATIC
+#  if defined(FLATUI_BUILD_LIB)
+#    define FLATUI_EXPORT Q_DECL_EXPORT
+#  else
+#    define FLATUI_EXPORT Q_DECL_IMPORT
+#  endif
+#else
+#  define FLATUI_EXPORT
+#endif
+
+class FLATUI_EXPORT FlatUi : public QObject
 {
     Q_OBJECT        
     
@@ -67,8 +77,8 @@ public:
     Q_PROPERTY(QColor textColor READ textColor WRITE setTextColor NOTIFY textColorChanged)
     
 public:
-    explicit FlatUi(QObject *parent = 0);
-    
+    explicit FlatUi(QObject *parent = nullptr);
+    virtual ~FlatUi(){}
     static FlatUi* qmlAttachedProperties(QObject* object);
     
     

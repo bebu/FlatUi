@@ -2,10 +2,11 @@
 #define FLATUIPLUGIN_H
 
 #include <QObject>
+#include "flatui.h"
 
 #ifdef FLATUI_BUILD_NO_PLUGIN
 
-class FlatUiPlugin : public QObject
+class FLATUI_EXPORT FlatUiPlugin : public QObject
 {
     Q_OBJECT
     static FlatUiPlugin& instance(){
@@ -33,7 +34,7 @@ public slots:
 #else
 #include <QQmlExtensionPlugin>
 
-class FlatUiPlugin : public QQmlExtensionPlugin {
+class FLATUI_EXPORT FlatUiPlugin : public QQmlExtensionPlugin {
     Q_OBJECT    
     Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QQmlExtensionInterface")
 public:
