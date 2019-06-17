@@ -17,19 +17,20 @@ add_library(${PROJECT_NAME} SHARED ${SRC})
 target_link_libraries(${PROJECT_NAME} Qt5::QuickControls2)
 
 
-add_custom_target(copy-plugin ALL
+add_custom_target(copy-plugin-${PROJECT_NAME} ALL
         COMMAND
         ${CMAKE_COMMAND} -E copy_directory
                 ${CMAKE_CURRENT_SOURCE_DIR}/FlatUi
                 ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/FlatUi
+        DEPENDS ${PROJECT_NAME}
 )
 
 
-add_custom_target(copy-lib ALL
+add_custom_target(copy-lib-${PROJECT_NAME} ALL
         COMMAND
-        ${CMAKE_COMMAND} -E copy_if_different
-                ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/FlatUi.dll
-                ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/FlatUi
-        DEPENDS ${PROJECT_NAME}
+        ${CMAKE_COMMAND} -E rename
+                $<TARGET_FILE:${PROJECT_NAME}>
+                ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/FlatUi/$<TARGET_FILE_NAME:${PROJECT_NAME}>
+        DEPENDS copy-plugin-${PROJECT_NAME}
 )
 
